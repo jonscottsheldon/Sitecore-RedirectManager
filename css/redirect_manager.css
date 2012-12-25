@@ -1,0 +1,59 @@
+html,body,div,span,iframe,form,
+h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,blockquote,ul,ol,
+input,textarea {
+   padding: 0;
+   margin: 0;
+   border: 0;
+   vertical-align: baseline;
+   outline: none;
+   font-family: Arial;
+   font-size: 13px;
+   color: #333333;
+}
+
+a,
+a:hover,
+a:active {
+   color: #0073b4;
+   outline: none;
+}
+
+a:hover {
+   color: #006198;
+}
+
+body {
+   padding: 20px;
+   background: url(../images/redirectmanager/bg_pattern.jpg) repeat left 0;
+}
+
+.Redirects_0 {
+   text-decoration:none;
+   display: block;
+   padding: 10px 5px;
+   cursor: default;
+}
+
+.Redirects_0:hover {
+   background-color: #e1e1e1;
+}
+
+.block-name .name,
+.block-name .title{
+   display: inline;
+   font-weight: bold;
+   color: #000;
+}
+.block-name .name {
+   padding-right: 5px;
+}
+
+.block-name .title {
+   font-weight: normal;
+}
+
+.description {
+   color: #838383;
+   padding-top: 3px;
+}
