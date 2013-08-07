@@ -7,6 +7,9 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System;
+using Sitecore.Caching;
+
 namespace Sitecore.SharedSource.RedirectManager
 {
   using System.Collections;
@@ -249,6 +252,22 @@ namespace Sitecore.SharedSource.RedirectManager
       {
         var sw = new Stopwatch();
         sw.Start();
+
+          // make sure that the redirects folder item is cleared from cache.
+          // this ensures that all redirect items are read directly from the underlying database
+          // which in distributed production environments, with separate CM and CD servers, is absolutely necessary
+          try
+          {
+              ItemCache itemCache = CacheManager.GetItemCache(Factory.GetDatabase(Configuration.Database));
+              ID redirectsFolderItem = new ID(ItemIDs.RedirectsFolderItem);
+              itemCache.RemoveItem(redirectsFolderItem);
+              LogManager.WriteInfo(string.Format("Cleared item cache for redirects \"{0}\" so its reloaded from database.", ItemIDs.RedirectsFolderItem));
+          }
+          catch (Exception ex)
+          {
+              LogManager.WriteError(string.Format("Failed to clear item cache for redirects \"{0}\"", ItemIDs.RedirectsFolderItem));
+          }
+
         var redirectForlder = Factory.GetDatabase(Configuration.Database).GetItem(ItemIDs.RedirectsFolderItem);
         if (redirectForlder == null)
         {

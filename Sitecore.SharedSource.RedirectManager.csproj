@@ -36,12 +36,12 @@
   <ItemGroup>
     <Reference Include="Sitecore.Kernel, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\trunk\Components\SiteCore\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Logging, Version=1.2.0.30715, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Sitecore.Logging.dll</HintPath>
+      <HintPath>..\..\trunk\Components\SiteCore\Sitecore.Logging.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
